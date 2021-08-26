@@ -21,6 +21,7 @@ public class TestEventHandler {
 		log.info("handle : {}", event.getMessage());
 	}
 
+	@Async
 	@EventListener(condition = "#event.message.startsWith('messageType02')")
 	public void handleFilter(TestEvent event) throws InterruptedException {
 		Thread.sleep(1000);
